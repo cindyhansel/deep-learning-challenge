@@ -52,7 +52,7 @@ To begin with a simple model, the original network consisted of the following el
 
 With an accuracy of **72.51%** the results of the original model did not meet the performance goal of 75%.
 
-## image
+![](Image/Original_accuracy.png)
 
 #### Optimization attempts
 Attempts at optimization included the following changes:
