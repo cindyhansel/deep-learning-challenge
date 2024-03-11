@@ -28,7 +28,7 @@ Using your knowledge of TensorFlow, you’ll design a neural network, or deep le
 Using your knowledge of TensorFlow, optimize your model to achieve a target predictive accuracy higher than 75%.
 
 ## Results
-#### Processing the Data
+### Processing the Data
 - the target of this model is the binary variable 'IS_SUCCESSFUL'
 - the following variables ar e the features of the model:
   - APPLICATION_TYPE
@@ -43,7 +43,7 @@ Using your knowledge of TensorFlow, optimize your model to achieve a target pred
   - EIN
   - NAMES
 
-#### Compiling, Training, amd Evaluating the Model
+## Compiling, Training, and Evaluating the Model
 To begin with a simple model, the original network consisted of the following elements:
   - 2 hidden layers with 6 nodes each
   - 20 epochs
@@ -52,14 +52,18 @@ To begin with a simple model, the original network consisted of the following el
 
 With an accuracy of **72.51%** the results of the original model did not meet the performance goal of 75%.
 
-![alt text](Image/Original_accuracy.png)
+<img src="Images/Original_accuracy.png" alt="Original Accuracy" width="40%">
 
-#### Optimization attempts
+### (Original Model - 72.51% accuracy)
+
+## Optimization attempts
 Attempts at optimization included the following changes:
 
 First, the epochs were increased from 20 to 40, resulting in an accuracy of **72.73%**.
 
-## image
+<img src="Images/epochs to 40.png" alt="Epochs to 40" width="40%">
+
+### (Increasing epochs to 40 - 72.73% accuracy)
 
 Next, the ASK_AMT feature was binned with 9 unique values. It was noticed that 5000 was the minimum and most popular amount. There none below that and the amounts ranged to over 800,000,000. This was an opportunity to eliminate possible outliers in the column and categorize the feature.
 
@@ -81,17 +85,25 @@ The top accuracy with these changes had 3 hidden layers with the following chara
 
 Along with binning the 'ASK_AMOUNT', these improvements increased the accuracy to only **72.84%**.
 
-## image
+<img src="Images/bin ASK_AMT.png" alt="bin ASK_AMT" width="40%">
+
+### (After binning ASK_AMT - 72.84% accuracy)
 
 Finally, an attempt to place 'NAMES' back into the dataset was attempted in several different ways by adjusting bin sizes. With 'NAMES' divided into 31 bins, the accuracy surpassed the goal with a score of **75.42**%. 
 
-Though this last change accomplished the goal of over 75% accuracy, it comes with warning as is explained in the summary.
+Though this last change accomplished the goal of over 75% accuracy, it comes with a precaution as explained in the summary below.
 
-## image
+<img src="Images/with NAMES.png" alt="with NAMES" width="40%">
 
-#### Summary
+### (Adding back 'NAMES' - 75.42% accuracy)
 
-As stated in the original model, the 'NAMES' column was removed from the dataset because it is considered a non-beneficial ID column. The results of adding this column back into the dataset and thus, into the model, is likely showing the effects of the model 'memorizing' and overfitting the data. Because the goal of 75% accuracy was not achieved prior to this change, this model is not recommended to represent the problem set. 
+## Summary
+
+The original model resulted in an accuracy of **72.51%** which did not meet the goal of 75%.
+
+Optimization was explored on the model which did not accomplish much increase in accuracy. The highest observed was **72.84%**.
+
+As further exploration of model behavior, the attempt to add back in the 'NAMES' column proved to increase the accuracy. However, as stated in the original model, the 'NAMES' column was removed from the dataset because it is considered a non-beneficial ID column. The results of adding this column back into the dataset, and thus into the model, is likely showing the effects of the model 'memorizing' or overfitting the data. Because the goal of 75% accuracy was not achieved prior to this change, this model is not recommended to represent the problem set. 
 
 
 
